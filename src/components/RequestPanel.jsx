@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Send, Settings } from 'lucide-react';
+import { Send, Settings, Shield, Zap } from 'lucide-react';
 
-const RequestPanel = ({ endpoint, onUpdateEndpoint, onSendRequest, loading }) => {
+const RequestPanel = ({ endpoint, onUpdateEndpoint, onSendRequest, loading, onShowAuthModal, onShowTemplateLibrary }) => {
   const [activeTab, setActiveTab] = useState('body');
   const [headers, setHeaders] = useState([
     { key: 'Content-Type', value: 'application/json', enabled: true }
@@ -103,23 +103,48 @@ const RequestPanel = ({ endpoint, onUpdateEndpoint, onSendRequest, loading }) =>
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-gray-200">
-        <div className="flex px-4">
-          {['body', 'headers', 'config'].map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`
-                px-4 py-3 text-sm font-medium capitalize transition-colors
-                ${activeTab === tab
-                  ? 'text-primary-600 border-b-2 border-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
-                }
-              `}
-            >
-              {tab}
-            </button>
-          ))}
+      <div className="border-b border-gray-200 dark:border-gray-700">
+        <div className="flex px-4 items-center justify-between">
+          <div className="flex">
+            {['body', 'headers', 'config'].map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`
+                  px-4 py-3 text-sm font-medium capitalize transition-colors
+                  ${activeTab === tab
+                    ? 'text-primary-600 border-b-2 border-primary-600'
+                    : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'
+                  }
+                `}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            {onShowAuthModal && (
+              <button
+                onClick={onShowAuthModal}
+                className="text-xs flex items-center gap-1 text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+                title="Add Authentication"
+              >
+                <Shield className="w-3.5 h-3.5" />
+                Auth
+              </button>
+            )}
+            {onShowTemplateLibrary && (
+              <button
+                onClick={onShowTemplateLibrary}
+                className="text-xs flex items-center gap-1 text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+                title="Use Template"
+              >
+                <Zap className="w-3.5 h-3.5" />
+                Template
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

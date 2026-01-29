@@ -19,30 +19,42 @@ A clean, enterprise-grade web application for testing APIs and generating mock s
 - **Real-time Testing** - Instant API call simulation
 - **Response Viewer** - Status, headers, body with syntax highlighting
 - **Request History** - Track all your API calls
+- **Code Generation** - Export as fetch, axios, curl, XHR
 
 ### 🖥️ **Mock Server Generator**
-- **In-Browser Server** - No backend required
+- **Service Worker-Based** - Real in-browser mock server
 - **Custom Responses** - Define status codes, delays, data
 - **Multiple Endpoints** - Manage unlimited API endpoints
 - **Server Logs** - Monitor requests in real-time
 - **One-Click Start** - Toggle server on/off instantly
+- **Intercept Requests** - Service Worker intercepts /api/* routes
 
 ### 📊 **Endpoint Management**
 - **Visual Sidebar** - Browse all endpoints at a glance
 - **Quick Search** - Find endpoints instantly
 - **Method Badges** - Color-coded for easy identification
 - **Duplicate & Edit** - Quick endpoint creation
+- **Response Templates** - Pre-built response patterns
 
 ### 🎨 **Professional UI/UX**
-- **Clean Minimalist Design** - No flashy effects
+- **Clean Minimalist Design** - No gradients, no flashy effects
 - **Postman-Inspired Layout** - Familiar, professional interface
-- **VS Code Color Scheme** - Developer-friendly aesthetics
+- **Dark Mode** - Eye-friendly theme with persistence
 - **Responsive Design** - Works on all screen sizes
-- **Keyboard Shortcuts** - Fast workflow
-- **Dark Terminal** - Professional server logs
+- **Keyboard Shortcuts** - Fast workflow (Ctrl+/)
+- **Professional Typography** - Inter + JetBrains Mono
 
 ### 💾 **Import/Export**
 - **JSON Export** - Save your API collections
+- **Postman Import** ✅ - Import existing collections
+- **OpenAPI/Swagger** ✅ - Generate specifications
+- **Code Generation** ✅ - Export as fetch/axios/curl code
+
+### 🔐 **Authentication**
+- **Auth Templates** - Bearer, API Key, Basic Auth, JWT
+- **OAuth 2.0 Support** - OAuth token templates
+- **AWS Signature** - AWS Signature V4 template
+- **Custom Headers** - Flexible authentication options
 
 ---
 
@@ -101,7 +113,7 @@ npm run preview
 - **Tailwind CSS 3** - Utility-first styling
 - **Lucide React** - Professional icon library
 - **Axios** - HTTP client
-- **Service Workers** (Coming soon) - In-browser mock server
+- **Service Workers** ✅ - In-browser mock server
 
 ---
 
@@ -151,7 +163,7 @@ api-playground/
 
 ## 🚀 Performance
 
-- **Build Size**: ~162 KB JS (51 KB gzipped)
+- **Build Size**: ~197 KB JS (60 KB gzipped)
 - **Initial Load**: < 2 seconds
 - **Response Time**: Instant (mocked)
 - **Smooth**: 60fps scrolling
@@ -165,6 +177,62 @@ api-playground/
 - ✅ Firefox 88+
 - ✅ Safari 14+
 - ✅ Mobile browsers
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+Master the API Playground with these shortcuts:
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl+Enter` | Send request |
+| `Ctrl+N` | New endpoint |
+| `Ctrl+E` | Export collection |
+| `Ctrl+Shift+C` | Generate code |
+| `Ctrl+Shift+T` | Open templates |
+| `Ctrl+Shift+D` | Toggle dark mode |
+| `Ctrl+/` | Show all shortcuts |
+| `Escape` | Close modals |
+
+---
+
+## 🎨 New Features Highlights
+
+### 🔧 **Service Worker Mock Server**
+Real in-browser API mocking using Service Workers. Intercepts `/api/*` requests and serves your mock responses with configurable delays and status codes.
+
+### 📥 **Import/Export**
+- **Import** Postman collections directly
+- **Export** as Postman, OpenAPI/Swagger, or JSON
+- Share collections with your team
+
+### 💻 **Code Generation**
+Generate ready-to-use code in multiple formats:
+- JavaScript Fetch
+- Axios
+- cURL
+- XMLHttpRequest
+
+### 🔐 **Authentication Templates**
+Quick-start with common auth patterns:
+- Bearer Token (JWT/OAuth)
+- API Key
+- Basic Auth
+- Custom headers
+- AWS Signature V4
+
+### 🌙 **Dark Mode**
+Professional dark theme with automatic persistence. Perfect for late-night coding sessions.
+
+### 📚 **Response Templates**
+30+ pre-built response templates:
+- User management
+- E-commerce products
+- Blog posts
+- Error responses
+- Pagination
+- And more!
 
 ---
 
@@ -231,17 +299,6 @@ npm run build
 ## 📄 License
 
 MIT License - Free to use and modify
-
----
-
-## 🤝 Made for Hack Club
-
-This project showcases:
-- ✅ Professional design principles
-- ✅ Clean, maintainable code
-- ✅ Practical developer tool
-- ✅ Complete feature set
-- ✅ Well-documented
 
 ---
 
